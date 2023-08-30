@@ -1,9 +1,8 @@
 import { Dialect, Sequelize } from "sequelize";
 
 // TODO: This should be external config
-const connString =
-	"postgres://bookshopuser:super-secret-password@127.0.0.1:5432/bookshop";
-export let sequelize = new Sequelize(connString);
+
+export let sequelize = new Sequelize("sqlite::memory:");
 
 if (process.env.NODE_ENV !== "test") {
 	sequelize = new Sequelize(
